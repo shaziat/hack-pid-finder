@@ -58,7 +58,7 @@ You can use the framework without any command line arguments if your application
 - Non automated scenarios are tagged```@todo```.
 - Scenarios are distributed across 2 feature files(```./features/sounds-homepage.feature``` and ```./features/all-stations.feature```) depending on sounds homepage and all stations page scenarios. 
 
-##Step Definitions
+## Step Definitions
 
 - All the step definitions for the automated scenarios are written in ```./step-definitions/sounds-homepage-steps.js ```.
 - Comments written on every step to explain what happens in the step.
