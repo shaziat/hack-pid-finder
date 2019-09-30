@@ -15,7 +15,8 @@ function collectPaths(value, paths) {
 
 function coerceInt(value, defaultValue) {
 
-    var int = parseInt(value);
+    // eslint-disable-next-line radix
+    const int = parseInt(value);
 
     if (typeof int === 'number') return int;
 
@@ -36,6 +37,7 @@ var config = {
 var configFileName = path.resolve(process.cwd(), 'selenium-cucumber-js.json');
 
 if (fs.isFileSync(configFileName)) {
+    // eslint-disable-next-line global-require,import/no-dynamic-require
     config = Object.assign(config, require(configFileName));
 }
 
@@ -128,7 +130,7 @@ if (program.tags) {
     });
 }
 
-if (program.worldParameters){
+if (program.worldParameters) {
     process.argv.push('--world-parameters');
     process.argv.push(program.worldParameters);
 }
