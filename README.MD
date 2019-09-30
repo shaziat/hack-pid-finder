@@ -1,10 +1,10 @@
-#BBC Sounds Automation Test
+# BBC Sounds Automation Test
 
-##Introduction
+## Introduction
 
 JavaScript browser automation framework using official selenium-webdriver and cucumber-js. This framework contains a few acceptance tests for BBC Sounds Homepage.
 
-##Installation
+## Installation
 
 Node needs to be installed before this project is installed. 
 
@@ -51,7 +51,7 @@ You can use the framework without any command line arguments if your application
     └── cucumber-report.html
 ```
 
-##Feature files:
+## Feature files:
 
 - The scenarios that were already written in Part 1 of the test are all automated and tagged ```@part1```. 
 - Gerkhin scenarios are written for the acceptance criteria mentioned in Part 2 and are tagged ```@part2```.
@@ -63,15 +63,6 @@ You can use the framework without any command line arguments if your application
 - All the step definitions for the automated scenarios are written in ```./step-definitions/sounds-homepage-steps.js ```.
 - Comments written on every step to explain what happens in the step.
 
-##Page Objects
-
-
-
-##Reports
+## Reports
 
 HTML and JSON reports are automatically generated and stored in  ```bash ./reports ``` folder
-
-
-# sounds-technical-test
-# sounds-technical-test
-# sounds-technical-test
