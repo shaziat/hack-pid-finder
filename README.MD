@@ -64,5 +64,4 @@ You can use the framework without any command line arguments if your application
 - Comments written on every step to explain what happens in the step.
 
 ## Reports
-
-HTML and JSON reports are automatically generated and stored in  ``` ./reports ``` folder
+HTML and JSON reports are automatically generated and stored in  ```bash ./reports ``` folder
