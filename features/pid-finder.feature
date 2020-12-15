@@ -15,4 +15,4 @@ Feature: Sounds pid_finder
     And I can see there are Next & Previous buttons (both enabled) in the PID
     And I can see next item in the playQ should have tracklist 
     And I can see the items in the tracklists should have Track Now playing equalizer
-   
+  
