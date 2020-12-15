@@ -5,6 +5,7 @@ Feature: Sounds pid_finder
   So THAT I can see all avaliable pids with tracks 
   @slice1
   Scenario: Radio 1 and Radio 2 logos are displayed in the Listen Live module the Sounds Homepage
+    Given I query RMS API
     When I extract PID
     Then I am on the single pid aod playspace page
     And I can see PID works outside UK on BS
