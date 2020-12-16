@@ -27,7 +27,7 @@ var config = {
     steps: './step-definitions',
     pageObjects: './page-objects',
     sharedObjects: './shared-objects',
-    featureFiles: './features',
+    featureFiles: './features/pid-finder.feature',
     reports: './reports',
     browser: 'chrome',
     browserTeardownStrategy: 'always',
