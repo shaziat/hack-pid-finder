@@ -12,4 +12,19 @@ module.exports = {
             return driver.wait(until.elementLocated(by.css('body')), timeout);
         });
     },
+
+    pidList: function(selector) {
+      let elemArray = driver.findElements(selector);
+            return elemArray.then(function(elems) {
+              return Promise.all(
+                elems.map(function(elem) {
+                  // all promises must be resolved
+                  return elem.getText(); // map the elements' text to an array
+                })
+              )
+              .then(function(text) {
+                return text; // return the text of the element
+              });
+            });
+    }
 };
