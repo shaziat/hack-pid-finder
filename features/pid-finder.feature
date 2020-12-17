@@ -7,12 +7,10 @@ Feature: Sounds pid_finder
   Scenario: Radio 1 and Radio 2 logos are displayed in the Listen Live module the Sounds Homepage
     Given I query RMS API
     When I extract PID
-    Then I am on the single pid aod playspace page
-    And I can see PID works outside UK on BS
-    And I can see PID has Tracklists (with ellipses as expected)
+    Then I can see its available for at least more than twenty days
+    And I can see PID has atleast thirteen Tracklists with ellipses
     And I can see PID has coming Up Next with at least 2 items
-    And I can see its available for at least more than 20-25 days
-    And I can see there are Next & Previous buttons (both enabled) in the PID
-    And I can see next item in the playQ should have tracklist 
-    And I can see the items in the tracklists should have Track Now playing equalizer
+    #And I can see PID works outside UK on BS
+    #And I can see next item in the playQ should have tracklist 
+    #And I can see the items in the tracklists should have Track Now playing equalizer
   
