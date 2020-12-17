@@ -25,7 +25,7 @@ module.exports = function () {
 
     this.Then(/^I can see its available for at least more than twenty days$/, async function () {
         await request(url)
-            .get('/m000plcn')
+            .get('/p08vj2q0')
             .expect(200)
             .expect('Content-Type', /json/)
             .then((response) => {
