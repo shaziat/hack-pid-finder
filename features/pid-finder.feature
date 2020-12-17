@@ -10,13 +10,6 @@ Feature: Sounds pid_finder
     Then I can see its available for at least more than twenty days
     And I can see PID has atleast thirteen Tracklists with ellipses
     And I can see PID has coming Up Next with at least 2 items
-<<<<<<< HEAD
     #And I can see PID works outside UK on BS
     #And I can see next item in the playQ should have tracklist 
     #And I can see the items in the tracklists should have Track Now playing equalizer
-=======
-    And I can see its available for at least more than twenty days
-    And I can see there are Next & Previous buttons (both enabled) in the PID
-    And I can see next item in the playQ should have tracklist 
-    And I can see the items in the tracklists should have Track Now playing equalizer
->>>>>>> 8f3056c... get availability dates
