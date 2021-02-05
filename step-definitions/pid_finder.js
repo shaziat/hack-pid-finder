@@ -1,24 +1,42 @@
 const request = require('supertest');
 
-const url = 'https://rms.api.bbc.co.uk/v2/experience/inline/play/';
+//const url = 'https://rms.api.bbc.co.uk/v2/experience/inline/play/';
+const music_mixes = 'https://rms.api.bbc.co.uk/v2/experience/';
 module.exports = function () {
 
-    this.Given(/^I query RMS API$/, () => helpers.loadPage(page.pidFinder.url, 1000));
+    // this.Given(/^I query RMS API$/, () => helpers.loadPage(page.pidFinder.url, 1000));
 
-    this.When(/^I extract PID$/, () => {
-        return helpers.pidList(page.pidFinder.elements.musicPid).then((text) => {
-            global.text = text;
-            console.log('The array Length is: ' + text.length);
-          //  console.log('The array is: ' + text);
-          }); 
-        });
+    // this.When(/^I extract PID$/, () => {
+    //     return helpers.pidList(page.pidFinder.elements.musicPid).then((text) => {
+    //         global.text = text;
+    //         console.log('The array Length is: ' + text.length);
+    //       //  console.log('The array is: ' + text);
+    //       }); 
+    //     });
 
+    this.Given(/^I query RMS API$/, async function() {
+       // helpers.loadPage(page.pidFinder.music_mixes, 1000);
+        await request(music_mixes)
+        .get('inline/music')
+        .timeout(5000)
+        .expect('Content-Type', /json/)
+        .then((response) => {
+            let music_pids = new Array();
+            response.body.data[1].data.forEach((data) => {
+                music_pids.push(data.id);
+                console.log(data.id);
+                return (global.music_pids = music_pids);
+            })
+            //console.log('The Music Pids are: '+music_pids)
+        })
+        console.log('The Music Pids are: '+music_pids)
+    });
+   /*
     this.Then(/^I can see its available for at least more than twenty days$/, async function () {
         const arr = ['m000pp2m'];
         await arr.forEach(async(pid) => { 
             console.log('Entered into Availability code. Pid is: ' + pid);
             await request(url)
-
                 .get(pid)
                 .timeout(10000)
                 .expect('Content-Type', /json/)
@@ -75,12 +93,12 @@ module.exports = function () {
                     }
                 });
         });
-    });
-
+    });*/
+      
       this.Then(/^I can see PID has atleast thirteen Tracklists with ellipses$/, async function () {
-        const arr1 = ['m000pp2m'];
+       // const arr1 = ['m000pp2m'];
        // await text.forEach(async(pid) => { 
-        await arr1.forEach(async(pid) => { 
+        await music_pids.forEach(async(pid) => { 
             console.log('Entered into Tracklist step. Pid is: ' + pid)
             await request(url)
                 .get(pid)
