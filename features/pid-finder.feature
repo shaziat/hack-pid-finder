@@ -10,6 +10,7 @@ Feature: Sounds pid_finder
   #  When I extract PID
   #  Then I can see its available for at least more than twenty days
     And I can see PID has atleast thirteen Tracklists with ellipses
+    Then I can see its available for at least more than twenty days
  #   And I can see PID has coming Up Next with at least two items
   # And I can see PID works outside UK on BS
   # And I can see next item in the playQ should have tracklist 
